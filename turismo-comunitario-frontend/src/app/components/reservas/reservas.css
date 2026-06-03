@@ -1,0 +1,83 @@
+.reserva-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.reserva-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem 2rem;
+}
+
+.reserva-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.half-width {
+  flex: 1;
+}
+
+label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid #CBD5E0;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(47, 133, 90, 0.2);
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.btn:disabled {
+  background-color: #A0AEC0;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #C6F6D5;
+  color: #22543D;
+}
+
+.alert-error {
+  background-color: #FED7D7;
+  color: #822727;
+}

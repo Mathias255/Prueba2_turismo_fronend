@@ -1,0 +1,55 @@
+<div class="container reserva-container">
+  <div class="reserva-card card">
+    <h1 class="section-title" style="margin-bottom: 2rem;">Reserva tu Aventura</h1>
+    
+    @if (successMsg) {
+      <div class="alert alert-success">{{ successMsg }}</div>
+    }
+    
+    @if (errorMsg) {
+      <div class="alert alert-error">{{ errorMsg }}</div>
+    }
+
+    <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" class="reserva-form">
+      <div class="form-group">
+        <label for="nombreCliente">Nombre Completo</label>
+        <input type="text" id="nombreCliente" formControlName="nombreCliente" class="form-control" placeholder="Ej. Juan Pérez">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group half-width">
+          <label for="cantidadPersonas">N° de Personas</label>
+          <input type="number" id="cantidadPersonas" formControlName="cantidadPersonas" class="form-control" min="1">
+        </div>
+        <div class="form-group half-width">
+          <label for="fechaTour">Fecha del Tour</label>
+          <input type="date" id="fechaTour" formControlName="fechaTour" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="destinoId">Destino</label>
+        <select id="destinoId" formControlName="destinoId" class="form-control">
+          <option value="" disabled>Selecciona un destino</option>
+          @for (destino of destinos; track destino.id) {
+            <option [value]="destino.id">{{ destino.nombre }} (${{ destino.precioPorPersona }} c/u)</option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="guiaId">Guía Local</label>
+        <select id="guiaId" formControlName="guiaId" class="form-control">
+          <option value="" disabled>Selecciona un guía</option>
+          @for (guia of guias; track guia.id) {
+            <option [value]="guia.id">{{ guia.nombre }} ({{ guia.idiomas }})</option>
+          }
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="reservaForm.invalid || loading">
+        {{ loading ? 'Procesando...' : 'Confirmar Reserva' }}
+      </button>
+    </form>
+  </div>
+</div>

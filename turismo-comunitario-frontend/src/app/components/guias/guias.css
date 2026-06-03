@@ -1,0 +1,69 @@
+.guia-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.guia-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.guia-info {
+  flex-grow: 1;
+}
+
+.guia-info h2 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.guia-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.estado {
+  margin-top: 1rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.disponible {
+  background-color: #C6F6D5;
+  color: #22543D;
+}
+
+.no-disponible {
+  background-color: #FED7D7;
+  color: #822727;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--primary-color);
+}
+
+.error-msg {
+  background-color: #FED7D7;
+  color: #C53030;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}

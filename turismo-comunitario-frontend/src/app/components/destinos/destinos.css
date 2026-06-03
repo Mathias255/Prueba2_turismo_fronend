@@ -1,0 +1,68 @@
+.destino-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.destino-img-placeholder {
+  height: 200px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.destino-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.destino-info h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.ubicacion {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.destino-footer {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  padding: 3rem;
+}
+
+.error-msg {
+  background-color: #FED7D7;
+  color: #C53030;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}

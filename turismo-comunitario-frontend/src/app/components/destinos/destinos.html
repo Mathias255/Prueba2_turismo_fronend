@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="section-title">Destinos Disponibles</h1>
+
+  @if (loading) {
+    <div class="loading">Cargando destinos...</div>
+  }
+
+  @if (error) {
+    <div class="error-msg">{{ error }}</div>
+  }
+
+  @if (!loading && !error) {
+    <div class="grid">
+      @for (destino of destinos; track destino.id) {
+        <div class="card destino-card">
+          <div class="destino-img-placeholder">
+            <span>{{ destino.nombre.charAt(0) }}</span>
+          </div>
+          <div class="destino-info">
+            <h2>{{ destino.nombre }}</h2>
+            <p class="ubicacion"><i class="icon-location">📍</i> {{ destino.ubicacion }}</p>
+            <p class="descripcion">{{ destino.descripcion }}</p>
+            <div class="destino-footer">
+              <span class="precio">${{ destino.precioPorPersona }} / persona</span>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p>No hay destinos disponibles en este momento.</p>
+      }
+    </div>
+  }
+</div>

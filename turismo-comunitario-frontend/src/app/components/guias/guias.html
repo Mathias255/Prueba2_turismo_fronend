@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="section-title">Nuestros Guías Locales</h1>
+
+  @if (loading) {
+    <div class="loading">Cargando guías...</div>
+  }
+
+  @if (error) {
+    <div class="error-msg">{{ error }}</div>
+  }
+
+  @if (!loading && !error) {
+    <div class="grid">
+      @for (guia of guias; track guia.id) {
+        <div class="card guia-card">
+          <div class="guia-avatar">
+            <span>{{ guia.nombre.charAt(0) }}</span>
+          </div>
+          <div class="guia-info">
+            <h2>{{ guia.nombre }}</h2>
+            <p><strong>Idiomas:</strong> {{ guia.idiomas }}</p>
+            <p><strong>Teléfono:</strong> {{ guia.telefono }}</p>
+            <div class="estado">
+              <span class="badge" [class.disponible]="guia.disponible" [class.no-disponible]="!guia.disponible">
+                {{ guia.disponible ? 'Disponible' : 'No Disponible' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p>No hay guías disponibles.</p>
+      }
+    </div>
+  }
+</div>
